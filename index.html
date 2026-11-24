@@ -264,7 +264,7 @@
   <div class="snow"></div>
 
   <!-- EDITA AQUÍ EL TEXTO DE ARRIBA -->
-  <p class="hint" id="hint">✨ Toca el sello dorado para abrir el sobre sorpesa ✨</p>
+  <p class="hint" id="hint">✨ Toca el sello dorado para abrir el sobre sorpresa ✨</p>
 
   <div class="scene" id="envelopeScene" onclick="toggleEnvelope()">
     <div class="envelope-back">
@@ -302,7 +302,6 @@
     }
 
     function confirmarAsistencia() {
-      // Pon aquí tu número con código de país (sin + ni espacios, ej. México: 526691234567)
       const telefono = "526692689365";
       const mensaje = encodeURIComponent("🎄 ¡Hola! Confirmo mi asistencia a poner el pino navideño este domingo a las 5:00 pm. ¡Ahí nos vemos!");
       window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
