@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>¡La Navidad Llegó a Casa! 2026</title>
+  <meta property="og:title" content="🎄 ¡La Navidad Llegó a Casa! 2026" />
+  <meta property="og:description" content="Toca el enlace para abrir tu sobre navideño y ver todos los detalles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kikyn.github.io/navidad-2026/invitacion.jpg" />
+  <meta property="og:image:width" content="1080" />
+  <meta property="og:image:height" content="1920" />
   <style>
     * {
       box-sizing: border-box;
@@ -24,7 +30,6 @@
       color: #fff;
     }
 
-    /* Partículas de nieve suaves de fondo */
     .snow {
       position: fixed;
       inset: 0;
@@ -67,12 +72,11 @@
       50% { transform: scale(1.05); }
     }
 
-    /* Escenario del sobre */
     .scene {
       position: relative;
       z-index: 5;
       width: min(92vw, 360px);
-      height: 520px;
+      height: 540px;
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -80,7 +84,6 @@
       cursor: pointer;
     }
 
-    /* Cuerpo trasero del sobre */
     .envelope-back {
       position: relative;
       width: 100%;
@@ -90,7 +93,6 @@
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.75), inset 0 0 0 2px #d4af37;
     }
 
-    /* Interior verde navideño del sobre */
     .envelope-lining {
       position: absolute;
       inset: 6px;
@@ -104,7 +106,6 @@
       border-radius: 8px;
     }
 
-    /* Tu imagen original dentro del sobre */
     .card-wrapper {
       position: absolute;
       bottom: 14px;
@@ -124,25 +125,22 @@
       display: block;
       width: 100%;
       height: auto;
-      /* Recorta visualmente la parte inferior mientras está guardada */
       max-height: 205px;
       object-fit: cover;
       object-position: top center;
       transition: max-height 1s ease;
     }
 
-    /* Estado abierto: la tarjeta sale y se muestra completa */
     .scene.open .card-wrapper {
-      transform: translateX(-50%) translateY(-45px) scale(1.04);
+      transform: translateX(-50%) translateY(-45px) scale(1.02);
       z-index: 8;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 25px rgba(255, 215, 0, 0.35);
     }
 
     .scene.open .card-wrapper img {
-      max-height: 600px;
+      max-height: 700px;
     }
 
-    /* Bolsillo delantero del sobre */
     .envelope-front {
       position: absolute;
       inset: 0;
@@ -169,7 +167,6 @@
       clip-path: polygon(0 100%, 50% 48%, 100% 100%);
     }
 
-    /* Solapa superior del sobre */
     .flap {
       position: absolute;
       top: 0;
@@ -189,7 +186,6 @@
       z-index: 1;
     }
 
-    /* Sello de cera dorado/rojo */
     .seal {
       position: absolute;
       top: 112px;
@@ -214,7 +210,6 @@
       pointer-events: none;
     }
 
-    /* Botones de acción inferiores */
     .actions {
       position: relative;
       z-index: 10;
@@ -268,13 +263,13 @@
 
   <div class="snow"></div>
 
-  <p class="hint" id="hint">✨ Toca el sello dorado ✨</p>
+  <!-- EDITA AQUÍ EL TEXTO DE ARRIBA -->
+  <p class="hint" id="hint">✨ Toca el sello dorado para abrir el sobre sorpesa ✨</p>
 
   <div class="scene" id="envelopeScene" onclick="toggleEnvelope()">
     <div class="envelope-back">
       <div class="envelope-lining"></div>
 
-      <!-- AQUÍ SE CARGA TU DISEÑO ORIGINAL -->
       <div class="card-wrapper">
         <img src="invitacion.jpg" alt="Invitación ¡La Navidad Llegó a Casa! 2026" />
       </div>
@@ -287,7 +282,7 @@
 
   <div class="actions" id="actions">
     <button class="btn btn-close" onclick="toggleEnvelope()">Cerrar sobre</button>
-    <button class="btn btn-wa" onclick="shareWhatsApp()">Confirmar asistencia</button>
+    <button class="btn btn-wa" onclick="confirmarAsistencia()">Confirmar asistencia</button>
   </div>
 
   <script>
@@ -306,10 +301,11 @@
       }
     }
 
-   function shareWhatsApp() {
-  const telefono = "526692689365"; // <-- Pon aquí tu número con código de país
-  const mensaje = encodeURIComponent("🎄 ¡Hola! Confirmo mi asistencia a poner el pino navideño este domingo a las 5:00 pm. ¡Ahí nos vemos!");
-  window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');;
+    function confirmarAsistencia() {
+      // Pon aquí tu número con código de país (sin + ni espacios, ej. México: 526691234567)
+      const telefono = "526692689365";
+      const mensaje = encodeURIComponent("🎄 ¡Hola! Confirmo mi asistencia a poner el pino navideño este domingo a las 5:00 pm. ¡Ahí nos vemos!");
+      window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
     }
   </script>
 
