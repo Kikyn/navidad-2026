@@ -268,7 +268,7 @@
 
   <div class="snow"></div>
 
-  <p class="hint" id="hint">✨ Toca el sello dorado para abrir tu invitación ✨</p>
+  <p class="hint" id="hint">✨ Toca el sello dorado ✨</p>
 
   <div class="scene" id="envelopeScene" onclick="toggleEnvelope()">
     <div class="envelope-back">
@@ -287,7 +287,7 @@
 
   <div class="actions" id="actions">
     <button class="btn btn-close" onclick="toggleEnvelope()">Cerrar sobre</button>
-    <button class="btn btn-wa" onclick="shareWhatsApp()">Compartir en WhatsApp</button>
+    <button class="btn btn-wa" onclick="shareWhatsApp()">Confirmar asistencia</button>
   </div>
 
   <script>
@@ -306,10 +306,10 @@
       }
     }
 
-    function shareWhatsApp() {
-      const url = encodeURIComponent(window.location.href);
-      const texto = encodeURIComponent("🎄✨ ¡Te llegó una invitación navideña! Toca el enlace para abrir el sobre: ");
-      window.open(`https://wa.me/?text=${texto}${url}`, '_blank');
+   function shareWhatsApp() {
+  const telefono = "526692689365"; // <-- Pon aquí tu número con código de país
+  const mensaje = encodeURIComponent("🎄 ¡Hola! Confirmo mi asistencia a poner el pino navideño este domingo a las 5:00 pm. ¡Ahí nos vemos!");
+  window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');;
     }
   </script>
 
